@@ -58,6 +58,8 @@ def iny(buffer):
 
 	return buffer
 def jmp(buffer, value=None):
+	#print("Jumping, value= ", value)
+	buffer= buffer + "\tgoto " + value + ";\n"
 	return buffer
 def jsr(buffer, value=None):
 	return buffer
