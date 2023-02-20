@@ -48,10 +48,14 @@ def inc(buffer, value=None):
 def index(buffer, value=None):
 	return buffer
 
-def inx(buffer):
+def inx(buffer, value=None):
+	buffer= buffer + "\tx=(x+1)%256;\n"
+	
 	return buffer
 
 def iny(buffer):
+	buffer= buffer + "\ty=(y+1)%256;\n"
+
 	return buffer
 def jmp(buffer, value=None):
 	return buffer

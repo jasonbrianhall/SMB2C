@@ -133,6 +133,8 @@ def main():
 	int main(void) {
 
 		char memory[8192];
+		int x=0;
+		int y=0;
 	"""
 
 		
@@ -152,7 +154,7 @@ def main():
 				buffer=instructiondata.get(temp.get("instruction"))(buffer)
 	
 	buffer=buffer + "\n\treturn 0;\n}"
-	#print(buffer)
+	print(buffer)
 	
 if __name__ == "__main__":
 	main()
