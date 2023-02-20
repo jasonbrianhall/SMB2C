@@ -40,6 +40,9 @@ for line in data:
 				for x in range(1, len(temp)):
 					if instructions.get(counter).get(".db")==None:
 						instructions[counter][".db"]=[]
+						if not instructions.get(counter).get("jumplocation")==None:
+							instructions[counter]["dbloc"]=instructions[counter]["jumplocation"]
+							del instructions[counter]["jumplocation"]
 						instructions[counter][".db"].append(temp[x].strip(","))
 						
 					else:
@@ -66,8 +69,9 @@ if debug==True:
 buffer="""#include <stdio.h>
 #include <stdlib.h>
 int main(void) {
-	"""
 
+	char memory[8192];
+"""
 for instruction in instructions:
 	temp=instructions.get(instruction)
 	if not temp.get("comment")==None:
