@@ -939,7 +939,7 @@ OperModeExecutionTree:
 
 MoveAllSpritesOffscreen:
               ldy #$00                ;this routine moves all sprites off the screen
-              .db $2c                 ;BIT instruction opcode
+              bit                     ;.db $2c BIT instruction opcode
 
 MoveSpritesOffscreen:
               ldy #$04                ;this routine moves all but sprite 0
